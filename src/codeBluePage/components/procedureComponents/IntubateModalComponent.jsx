@@ -5,14 +5,18 @@ function IntubateModalComponent() {
   const fnDispatch = useDispatch();
 
   const [oIoInfo, fnSetIoInfo] = useState({
-    nIoSize: null,
+    nEtSize: null,
     sOrientation: null,
-    sLocation: null
+    sLocation: null,
+    nSecuredMark: null,
+    sSecuredAt: null
   });
 
-  const aIoSizes = ["15mm", "25mm", "45mm"];
-  const aIoOrientations = ["Left", "Right"];
-  const aIoLocations = ["Proximal Humerus", "Proximal Tibia", "Distal Tibia"];
+  const aEtSizes = ["3.5mm", "4.0mm", "4.5mm", "5.0mm", "5.5mm", "6.0mm", "6.5mm", "7.0mm", "7.5mm", "8.0mm"];
+  const aEtOrientations = ["Left", "Right", "Center"];
+  const aEtLocations = ["Nare", "Oral", "Trachea"];
+  const aEtSecuredAt = ["Lips", "Gums", "Teeth"];
+  const aEtSecuredMark = ["11cm", "12cm", "13cm", "14cm", "15cm", "16cm", "17cm", "18cm", "19cm", "20cm", "21cm", "22cm", "23cm", "24cm"]
 
   const handleOnClick = (event) => {
     if (event.target.name === "saveBtn") {
@@ -25,14 +29,16 @@ function IntubateModalComponent() {
       });
     }
     fnSetIoInfo({
-      nIoSize: null,
+      nEtSize: null,
       sOrientation: null,
-      sLocation: null
+      sLocation: null,
+      nSecuredMark: null,
+      sSecuredAt: null
     });
   };
 
   const handleSizeChange = (event) => {
-    fnSetIoInfo({ ...oIoInfo, nIoSize: event.target.name });
+    fnSetIoInfo({ ...oIoInfo, nEtSize: event.target.name });
   };
 
   const handleOrientationChange = (event) => {
@@ -40,6 +46,12 @@ function IntubateModalComponent() {
   };
 
   const handleLocationChange = (event) => {
+    fnSetIoInfo({ ...oIoInfo, sLocation: event.target.name });
+  };
+  const handleSecuredAtChange = (event) => {
+    fnSetIoInfo({ ...oIoInfo, sLocation: event.target.name });
+  };
+  const handleSecuredMarkChange = (event) => {
     fnSetIoInfo({ ...oIoInfo, sLocation: event.target.name });
   };
 

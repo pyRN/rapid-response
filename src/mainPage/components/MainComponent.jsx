@@ -44,7 +44,7 @@ function MainComponent() {
           to="/strokeAlert"
           style={{ textDecoration: "none" }}
         >
-          <div className="card text-white border-primary h100">
+          <div className="card text-white border-primary h-100">
             <h5 className="card-header text-dark text-center bg-primary">
               Stroke Alert
             </h5>
